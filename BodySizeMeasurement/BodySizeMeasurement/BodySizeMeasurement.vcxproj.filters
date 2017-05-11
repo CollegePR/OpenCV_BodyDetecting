@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Background">
+      <UniqueIdentifier>{02d47d23-b85e-4832-9865-83a3aee82f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Foreground">
+      <UniqueIdentifier>{2bbc7909-ca1e-4607-b549-d98295b088b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Background\GirdRecovery">
+      <UniqueIdentifier>{130d796b-671a-4ea7-9263-0768c59751ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Foreground\BodyDetecting">
+      <UniqueIdentifier>{032811fc-1517-4bbb-a259-4e6265aa58cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Foreground\BodyLineFitting">
+      <UniqueIdentifier>{6c31e5b4-1852-4a63-8cbe-722aa4f26067}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Foreground\BodySizeMeasurement">
+      <UniqueIdentifier>{2973d025-5784-4619-8e6f-f5d699a557ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BodySizeMeasurement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LineData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridRecovery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyDetecting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyLineFitting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridRecovery.cpp">
+      <Filter>Source Files\Background\GirdRecovery</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyDetecting.cpp">
+      <Filter>Source Files\Foreground\BodyDetecting</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyLineFitting.cpp">
+      <Filter>Source Files\Foreground\BodyLineFitting</Filter>
+    </ClCompile>
+    <ClCompile Include="BodySizeMeasurement.cpp">
+      <Filter>Source Files\Foreground\BodySizeMeasurement</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
