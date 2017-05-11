@@ -1,0 +1,8 @@
+BodySizeMeasurement/BodySizeMeasurement.VC.VC.opendb
+*.exe
+BodySizeMeasurement/BodySizeMeasurement/x64/Debug/vc140.pdb
+*.obj
+BodySizeMeasurement/x64/Debug/BodySizeMeasurement.pdb
+*.exe
+*.obj
+*.lastbuildstate

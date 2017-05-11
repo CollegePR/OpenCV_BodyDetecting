@@ -5,10 +5,5 @@ c:\opencv\build\include\opencv2\core\utility.hpp : warning C4819: The file conta
 c:\opencv\build\include\opencv2\imgproc.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
 c:\opencv\build\include\opencv2\imgproc.hpp(592): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
 c:\opencv\build\include\opencv2\video\tracking.hpp(532): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
-  GridRecovery.cpp
-  BodySizeMeasurement.cpp
-  BodyLineFitting.cpp
-  BodyDetecting.cpp
-  Generating Code...
-  BodySizeMeasurement.vcxproj -> \\Mac\Home\Documents\GitHub\OpenCV_BodyDetecting\BodySizeMeasurement\x64\Debug\BodySizeMeasurement.exe
-  BodySizeMeasurement.vcxproj -> \\Mac\Home\Documents\GitHub\OpenCV_BodyDetecting\BodySizeMeasurement\x64\Debug\BodySizeMeasurement.pdb (Full PDB)
+  BodySizeMeasurement.vcxproj -> C:\Users\pjh\Documents\GitHub\OpenCV_BodyDetecting\BodySizeMeasurement\x64\Debug\BodySizeMeasurement.exe
+  BodySizeMeasurement.vcxproj -> C:\Users\pjh\Documents\GitHub\OpenCV_BodyDetecting\BodySizeMeasurement\x64\Debug\BodySizeMeasurement.pdb (Full PDB)
