@@ -8,3 +8,9 @@ BodySizeMeasurement/x64/Debug/BodySizeMeasurement.pdb
 *.lastbuildstate
 *.suo
 *.db
+*.pdb
+BodySizeMeasurement/x64/Debug/BodySizeMeasurement.exe
+*.ilk
+*.idb
+*.tlog
+*.suo

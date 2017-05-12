@@ -22,6 +22,7 @@
     <ClCompile Include="BodyDetecting.cpp" />
     <ClCompile Include="BodyLineFitting.cpp" />
     <ClCompile Include="BodySizeMeasurement.cpp" />
+    <ClCompile Include="GrabCut.cpp" />
     <ClCompile Include="GridRecovery.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -29,6 +30,7 @@
     <ClInclude Include="BodyDetecting.h" />
     <ClInclude Include="BodyLineFitting.h" />
     <ClInclude Include="BodySizeMeasurement.h" />
+    <ClInclude Include="GrabCut.h" />
     <ClInclude Include="GridRecovery.h" />
     <ClInclude Include="LineData.h" />
     <ClInclude Include="main.h" />

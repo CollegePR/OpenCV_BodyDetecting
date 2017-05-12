@@ -31,6 +31,9 @@
     <Filter Include="Source Files\Foreground\BodySizeMeasurement">
       <UniqueIdentifier>{2973d025-5784-4619-8e6f-f5d699a557ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Foreground\BodyDetecting\GrabCut">
+      <UniqueIdentifier>{8ad7bc55-1cc7-4c12-a84b-2a19a4839098}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BodySizeMeasurement.h">
@@ -51,6 +54,9 @@
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GrabCut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -67,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="BodySizeMeasurement.cpp">
       <Filter>Source Files\Foreground\BodySizeMeasurement</Filter>
+    </ClCompile>
+    <ClCompile Include="GrabCut.cpp">
+      <Filter>Source Files\Foreground\BodyDetecting\GrabCut</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
