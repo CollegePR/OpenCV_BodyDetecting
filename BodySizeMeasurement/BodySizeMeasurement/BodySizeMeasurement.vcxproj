@@ -18,25 +18,8 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BodyDetecting.cpp" />
-    <ClCompile Include="BodyLineFitting.cpp" />
-    <ClCompile Include="BodySizeMeasurement.cpp" />
-    <ClCompile Include="GrabCut.cpp" />
-    <ClCompile Include="GridRecovery.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BodyDetecting.h" />
-    <ClInclude Include="BodyLineFitting.h" />
-    <ClInclude Include="BodySizeMeasurement.h" />
-    <ClInclude Include="GrabCut.h" />
-    <ClInclude Include="GridRecovery.h" />
-    <ClInclude Include="LineData.h" />
-    <ClInclude Include="main.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9BBD44EB-C736-42EE-A5A2-535FD09D16D6}</ProjectGuid>
+    <ProjectGuid>{E83FD56C-BFCB-46CD-828F-5AE0C8C51ED1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BodySizeMeasurement</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -105,14 +88,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\opencv\build\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world320.lib;opencv_world320d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>
-      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -127,8 +106,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world320.lib;opencv_world320d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>opencv\build\x64\vc14\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world320d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -165,6 +143,24 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BodyDetecting.cpp" />
+    <ClCompile Include="BodyLineFitting.cpp" />
+    <ClCompile Include="BodySizeMeasurement.cpp" />
+    <ClCompile Include="GrabCut.cpp" />
+    <ClCompile Include="GridRecovery.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BodyDetecting.h" />
+    <ClInclude Include="BodyLineFitting.h" />
+    <ClInclude Include="BodySizeMeasurement.h" />
+    <ClInclude Include="GrabCut.h" />
+    <ClInclude Include="GridRecovery.h" />
+    <ClInclude Include="LineData.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="Ransac.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

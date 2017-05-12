@@ -14,59 +14,39 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Source Files\Background">
-      <UniqueIdentifier>{02d47d23-b85e-4832-9865-83a3aee82f52}</UniqueIdentifier>
+      <UniqueIdentifier>{41ec1262-6973-443a-a052-36feef38e0be}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Foreground">
-      <UniqueIdentifier>{2bbc7909-ca1e-4607-b549-d98295b088b3}</UniqueIdentifier>
+      <UniqueIdentifier>{50cff2c7-c2ec-4a45-a23e-00e5b74427da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Background\GirdRecovery">
-      <UniqueIdentifier>{130d796b-671a-4ea7-9263-0768c59751ca}</UniqueIdentifier>
+    <Filter Include="Source Files\Background\GridRecovery">
+      <UniqueIdentifier>{51e4ba6c-91a5-4fea-9c5b-198b84ba5d1a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Foreground\BodyDetecting">
-      <UniqueIdentifier>{032811fc-1517-4bbb-a259-4e6265aa58cc}</UniqueIdentifier>
+      <UniqueIdentifier>{8f42c427-3dea-4475-bac1-7e1031e29d9c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Foreground\BodyLineFitting">
-      <UniqueIdentifier>{6c31e5b4-1852-4a63-8cbe-722aa4f26067}</UniqueIdentifier>
+      <UniqueIdentifier>{7eaeb603-4043-4903-b83f-a9e9e739c4bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Foreground\BodySizeMeasurement">
-      <UniqueIdentifier>{2973d025-5784-4619-8e6f-f5d699a557ce}</UniqueIdentifier>
+      <UniqueIdentifier>{532960ec-b46f-4d09-bb16-76f57628344f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Foreground\BodyDetecting\GrabCut">
-      <UniqueIdentifier>{8ad7bc55-1cc7-4c12-a84b-2a19a4839098}</UniqueIdentifier>
+      <UniqueIdentifier>{efe4c79f-25a0-4526-8f75-ea66dd1f346a}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BodySizeMeasurement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LineData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GridRecovery.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BodyDetecting.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BodyLineFitting.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GrabCut.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GridRecovery.cpp">
-      <Filter>Source Files\Background\GirdRecovery</Filter>
+    <ClCompile Include="GrabCut.cpp">
+      <Filter>Source Files\Foreground\BodyDetecting\GrabCut</Filter>
     </ClCompile>
     <ClCompile Include="BodyDetecting.cpp">
       <Filter>Source Files\Foreground\BodyDetecting</Filter>
+    </ClCompile>
+    <ClCompile Include="GridRecovery.cpp">
+      <Filter>Source Files\Background\GridRecovery</Filter>
     </ClCompile>
     <ClCompile Include="BodyLineFitting.cpp">
       <Filter>Source Files\Foreground\BodyLineFitting</Filter>
@@ -74,8 +54,31 @@
     <ClCompile Include="BodySizeMeasurement.cpp">
       <Filter>Source Files\Foreground\BodySizeMeasurement</Filter>
     </ClCompile>
-    <ClCompile Include="GrabCut.cpp">
-      <Filter>Source Files\Foreground\BodyDetecting\GrabCut</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BodyDetecting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyLineFitting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BodySizeMeasurement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GrabCut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridRecovery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ransac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LineData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
