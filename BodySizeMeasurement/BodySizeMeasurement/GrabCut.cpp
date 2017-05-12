@@ -1,16 +1,22 @@
 #include "GrabCut.h"
 
+////////////////////////////////////////
+// 침식 & 팽창 과정을 통해 흰색격자선을
+// 뭉개서 검정배경에 신체형태만 남도록 처리
+////////////////////////////////////////
 void Preprocess(Mat & src_image, Mat & dst_image)
 {
-	//침식 & 팽창 과정을 통해 흰색격자선을 뭉개서 검정배경에 신체형태만 남도록 처리
+	
 	dst_image = src_image.clone();
 	erode(dst_image, dst_image, Mat(), Point(-1, -1), 6);
 	dilate(dst_image, dst_image, Mat(), Point(-1, -1), 6);
 }
 
+////////////////////////////////////////
+//그랩컷 알고리즘을 이용해 전경(신체)과 배경(격자) 분할
+////////////////////////////////////////
 void GrabCut(Mat & src_image, Mat & foreground_dst_image, Mat & background_dst_image)
 {
-	//그랩컷 알고리즘을 이용해 전경(신체)과 배경(검정배경) 분할
 	Mat pre_image;
 
 	Preprocess(src_image, pre_image);

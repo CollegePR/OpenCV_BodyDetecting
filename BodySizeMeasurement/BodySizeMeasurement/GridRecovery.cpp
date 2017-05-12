@@ -1,5 +1,8 @@
 #include "GridRecovery.h"
 
+////////////////////////////////////////
+// (0,0)좌표를 기준점으로 좌표이동 후 계산한 변형 ccw
+////////////////////////////////////////
 int ccw(Point p1, Point p2, Point p3, int C)
 {
 	int minx = (p1.x<p2.x) ? (p1.x<p3.x) ? p1.x : p3.x : (p2.x<p3.x) ? p2.x : p3.x;
@@ -16,16 +19,26 @@ int ccw(Point p1, Point p2, Point p3, int C)
 	return result;
 }
 
+////////////////////////////////////////
+// x좌표 기준 정렬 compare 함수
+////////////////////////////////////////
 bool compx(Point &i, Point &j)
 {
 	return i.x<j.x;
 }
 
+////////////////////////////////////////
+// y좌표 기준 정렬 compare 함수
+////////////////////////////////////////
 bool compy(Point &i, Point &j)
 {
 	return i.y<j.y;
 }
 
+////////////////////////////////////////
+// 같은점으로 처리해도 될 정도로 인접한 점인지
+// 체크하는 함수
+////////////////////////////////////////
 bool isEqualPoint(Point p1, Point p2, int C)
 {
 	float xx = pow(p1.x - p2.x, 2);
@@ -34,6 +47,11 @@ bool isEqualPoint(Point p1, Point p2, int C)
 	return (dist <= C);
 }
 
+////////////////////////////////////////
+// 해리스코너 알고리즘으로 검출된 점들 중
+// ccw 외곽선 검출 과정에 방해가 되는
+// 매우 인접한 두 점을 한 점으로 합치는 함수
+////////////////////////////////////////
 vector<Point> ContourOptimization(vector<Point>& points)
 {
 	vector<Point> result;
@@ -68,6 +86,10 @@ vector<Point> ContourOptimization(vector<Point>& points)
 	return result;
 }
 
+////////////////////////////////////////
+// 신체로 가려진 격자 복원을 위해
+// 격자 상, 하, 좌, 우 라인의 점을 추출하는 함수
+////////////////////////////////////////
 void get4SidePoints(vector<Point>& points, vector<Point>& left, vector<Point>& top, vector<Point>& right, vector<Point>& bottom)
 {
 	vector<bool> check(points.size());
@@ -124,7 +146,7 @@ void get4SidePoints(vector<Point>& points, vector<Point>& left, vector<Point>& t
 	p1 = top[top.size() - 1];
 	for (int i = 0; i<points.size(); i++) {
 		int ccwvalue = ccw(top[top.size() - 2], top[top.size() - 1], points[i], 0);
-		if (ccwvalue >= 900 && ccwvalue <= 950) {
+		if (ccwvalue >= 500 && ccwvalue <= 1500) {
 			check[i] = true;
 			p2 = points[i];
 		}
@@ -167,6 +189,7 @@ void get4SidePoints(vector<Point>& points, vector<Point>& left, vector<Point>& t
 	bottom.push_back(left[left.size() - 1]);
 	sort(bottom.begin(), bottom.end(), compx);
 
+	
 	Point tmp;
 	tmp.x = (top[2].x + top[3].x) / 2;
 	tmp.y = (top[2].y + top[3].y) / 2;
@@ -187,9 +210,13 @@ void get4SidePoints(vector<Point>& points, vector<Point>& left, vector<Point>& t
 	}
 }
 
+////////////////////////////////////////
+// 격자 복원 함수
+////////////////////////////////////////
 void GridRecovery(Mat &src_image, Mat &dst_image, vector<vector<Point>> &points)
 {
 	Mat image = src_image.clone();
+	Mat image2 = src_image.clone();
 	cvtColor(image, image, CV_RGB2GRAY);
 
 	Mat eig_image = Mat(image.cols, image.rows, 0);
@@ -205,20 +232,11 @@ void GridRecovery(Mat &src_image, Mat &dst_image, vector<vector<Point>> &points)
 	int tmp = 13;
 
 	int corner_count = 100;
-	//goodFeaturesToTrack(image, corners, corner_count, 0.05, 5.0);
+	goodFeaturesToTrack(image, corners, corner_count, 0.05, 5.0);
 
-	double qualityLevel = 0.01;
-	double minDistance = 20.;
-	cv::Mat mask;
-	int blockSize = 3;
-	bool useHarrisDetector = false;
-	double k = 0.04;
+	for (int i = 0; i<corners.size(); i++) circle(image2, corners[i], 5, CV_RGB(255, 0, 0));
 
-	cv::goodFeaturesToTrack(image, corners, corner_count, qualityLevel, minDistance, mask, blockSize, useHarrisDetector, k);
-
-	cout<<corners.size()<<endl;
-
-	return;
+	imshow("corners_org", image2);
 
 	corners = ContourOptimization(corners);
 
