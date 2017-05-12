@@ -6,20 +6,22 @@
 int main()
 {
 	Mat org_image = imread("image.jpeg");	//원본 이미지
-	Mat pre_image;	//그랩컷 전처리 이미지
 	Mat foreground_image;	//이미지 전경
 	Mat background_image;	//이미지 배경
 	Mat grid_recovery_image;	//격자점 복원 이미지
+	vector<vector<Point>> grid_points;
 
-	//그랩컷 전처리함수(침식,팽창)
-	Preprocess(org_image, pre_image);
-	//그랩컷(전경,배경 추출)
-	GrabCut(pre_image, foreground_image, background_image);
+	imshow("orginal", org_image);
 
-	imshow("org_image", org_image);
-	imshow("pre_image", pre_image);
-	imshow("foreground", foreground_image);
-	imshow("background", background_image);
+	//그랩컷(전처리(침식,팽창), 전경/배경 추출)
+	GrabCut(org_image, foreground_image, background_image);
+
+	//배경처리
+	GridRecovery(background_image, grid_recovery_image, grid_points);
+
+
+	//전경처리
+
 	waitKey(0);
 	return 0;
 }

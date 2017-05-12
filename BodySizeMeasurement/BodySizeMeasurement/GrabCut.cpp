@@ -11,13 +11,17 @@ void Preprocess(Mat & src_image, Mat & dst_image)
 void GrabCut(Mat & src_image, Mat & foreground_dst_image, Mat & background_dst_image)
 {
 	//그랩컷 알고리즘을 이용해 전경(신체)과 배경(검정배경) 분할
-	Rect grabcut_image_range(0, 0, src_image.cols - 31, src_image.rows - 31);
+	Mat pre_image;
+
+	Preprocess(src_image, pre_image);
+
+	Rect grabcut_image_range(0, 0, pre_image.cols - 31, pre_image.rows - 31);
 
 	Mat grabcut_result_image;
 	Mat grabcut_background;
 	Mat grabcut_background_model, grabcut_foreground_model;
 
-	grabCut(src_image, grabcut_result_image, grabcut_image_range, grabcut_background_model, grabcut_foreground_model, 5, GC_INIT_WITH_RECT);
+	grabCut(pre_image, grabcut_result_image, grabcut_image_range, grabcut_background_model, grabcut_foreground_model, 5, GC_INIT_WITH_RECT);
 
 	compare(grabcut_result_image, GC_PR_BGD, grabcut_background, CMP_EQ);
 	compare(grabcut_result_image, GC_PR_FGD, grabcut_result_image, CMP_EQ);
@@ -38,4 +42,7 @@ void GrabCut(Mat & src_image, Mat & foreground_dst_image, Mat & background_dst_i
 
 	foreground_dst_image = grabcut_foreground_image;
 	background_dst_image = grabcut_background_image;
+
+	imshow("foreground", foreground_dst_image);
+	imshow("background", background_dst_image);
 }
