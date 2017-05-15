@@ -34,6 +34,9 @@
     <Filter Include="Source Files\Foreground\BodyDetecting\GrabCut">
       <UniqueIdentifier>{efe4c79f-25a0-4526-8f75-ea66dd1f346a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Foreground\BodyLineFitting\Ransac">
+      <UniqueIdentifier>{40088ccc-b1af-4266-a3d1-9a3a05ad5348}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="BodySizeMeasurement.cpp">
       <Filter>Source Files\Foreground\BodySizeMeasurement</Filter>
+    </ClCompile>
+    <ClCompile Include="Ransac.cpp">
+      <Filter>Source Files\Foreground\BodyLineFitting\Ransac</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

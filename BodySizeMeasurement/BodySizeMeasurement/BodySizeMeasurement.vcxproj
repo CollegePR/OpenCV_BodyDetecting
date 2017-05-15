@@ -150,6 +150,7 @@
     <ClCompile Include="GrabCut.cpp" />
     <ClCompile Include="GridRecovery.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Ransac.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BodyDetecting.h" />

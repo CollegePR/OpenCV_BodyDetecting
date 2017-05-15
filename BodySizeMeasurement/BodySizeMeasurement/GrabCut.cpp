@@ -15,7 +15,7 @@ void Preprocess(Mat & src_image, Mat & dst_image)
 ////////////////////////////////////////
 //그랩컷 알고리즘을 이용해 전경(신체)과 배경(격자) 분할
 ////////////////////////////////////////
-void GrabCut(Mat & src_image, Mat & foreground_dst_image, Mat & background_dst_image)
+void GrabCut(Mat & src_image, Mat & foreground_dst_image, Mat & background_dst_image, Mat & result_image)
 {
 	Mat pre_image;
 
@@ -46,9 +46,11 @@ void GrabCut(Mat & src_image, Mat & foreground_dst_image, Mat & background_dst_i
 		}
 	}
 
+	result_image = grabcut_result_image;
 	foreground_dst_image = grabcut_foreground_image;
 	background_dst_image = grabcut_background_image;
 
 	imshow("foreground", foreground_dst_image);
 	imshow("background", background_dst_image);
+	imshow("grabcut", result_image);
 }

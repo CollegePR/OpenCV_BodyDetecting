@@ -140,9 +140,19 @@ double ransac_line_fitting(new_point *data, int no_data, new_line &model, double
 	return max_cost;
 }
 
-new_line drawRansac(vector<Point> contours, int s, int f, Scalar sc) {
+new_line Ransac(Mat &src_image, vector<Point> contours, int s, int f, Scalar sc) {
 	int n = f - s + 1;
 	new_point *data = new new_point[n];
+
+	if (contours.size() <= s || contours.size() <= f) {
+		new_line res;
+		new_point p;
+		p.x = 0;
+		p.y = 0;
+		res.mp = p;
+		res.sp = p;
+		return res;
+	}
 
 	// 759/329
 	for (int i = s; i <= f; i++) {
@@ -166,17 +176,15 @@ new_line drawRansac(vector<Point> contours, int s, int f, Scalar sc) {
 	p2.x = (int)(res_line.sp.x + 500 * res_line.mp.x);
 	p2.y = (int)(res_line.sp.y + 500 * res_line.mp.y);
 
-	//if (50. < cost) {
-		//line(image, Point(p1.x, p1.y), Point(p2.x, p2.y), sc, 2);
+	if (50. < cost) {
+		line(src_image, Point(p1.x, p1.y), Point(p2.x, p2.y), sc, 2);
 		//pDC->MoveTo((int)(line.sx-500*line.mx), (int)(line.sy-500*line.my));
 		//pDC->LineTo((int)(line.sx+500*line.mx), (int)(line.sy+500*line.my));
-	//}
+	}
 
 	new_line result;
 	result.sp = p1;
 	result.mp = p2;
-
-	//cout<<"["<<p1.x<<", "<<p1.y<<"], ["<<p2.x<<", "<<p2.y<<"]"<<endl;
 
 	return result;
 }
